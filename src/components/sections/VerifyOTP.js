@@ -40,7 +40,7 @@ const customTheme = extendTheme({
 });
 
 const LandingPage = () => {
-  const [input, setInput] = useState("");
+  // const [input, setInput] = useState("");
   const navigate = useNavigate();
   const [inputs, setInputs] = useState(["", "", "", "", "", ""]);
   const toast = useToast();
@@ -60,7 +60,7 @@ const LandingPage = () => {
     const verifyNumberResponse = await axios.post(
       "http://localhost:8080/api/v1/sms/verify-number",
       {
-        phoneNumber: number, // Use the user's phone number
+        phoneNumber: number,
       },
       {
         headers: {
