@@ -5,7 +5,7 @@ import {
   Box,
   Button,
   HStack,
-  Spacer,
+
   Image,
   VStack,
   Collapse,

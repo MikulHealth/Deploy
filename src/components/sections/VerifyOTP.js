@@ -1,10 +1,10 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { GetCurrentUser, UpdateCustomer } from "../../apiCalls/UserApis";
+// import { GetCurrentUser, UpdateCustomer } from "../../apiCalls/UserApis";
 import {
   Box,
   Button,
@@ -15,22 +15,11 @@ import {
   extendTheme,
   ChakraProvider,
   Text,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightElement,
-  Textarea,
-  Select,
   PinInput,
   PinInputField,
 } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Coloredlogo from "../../assets/LogoColoured.svg";
 import "../../styles/pages/LandingPage.css";
 import logo from "../../assets/Whitelogo.png";
 

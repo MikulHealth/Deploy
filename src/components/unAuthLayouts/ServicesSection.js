@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {useEffect } from "react";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";

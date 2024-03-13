@@ -6,8 +6,6 @@ import WhatsAppIcon from "../../assets/WhatsApp.svg";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Button,
-  Link as ChakraLink,
   Image,
   Text,
   Flex,
