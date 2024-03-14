@@ -159,14 +159,19 @@ const BeneficiariesModal = ({ isOpen, onClose }) => {
 
   return (
     <>
-      <Drawer isOpen={isOpen} onClose={onClose} placement="right" size={{base: "md", md: "lg"}}>
+      <Drawer
+        isOpen={isOpen}
+        onClose={onClose}
+        placement="right"
+        size={{ base: "md", md: "lg" }}
+      >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader fontSize="lg" fontWeight="bold" color="#510863">
+          <DrawerHeader fontSize="lg" fontWeight="bold" color="#A210C6">
             Beneficiaries
           </DrawerHeader>
           <DrawerCloseButton />
-          <DrawerBody ml={{md: "40px"}}>
+          <DrawerBody ml={{ md: "40px" }}>
             <Progress marginBottom="20px" size="xs" isIndeterminate />
             {loading ? (
               <Flex align="center" justify="center" height="200px">
@@ -237,10 +242,15 @@ const BeneficiariesModal = ({ isOpen, onClose }) => {
                           </Text>
                         </Flex>
                       </Box>
-                      <Flex justifyContent="space-between" marginTop="5px">
+                      <Flex
+                        fontSize={{ base: "10px" }}
+                        ml={{ md: "250px" }}
+                        justifyContent="space-between"
+                        marginTop="5px"
+                      >
                         <Box>
                           <Text
-                            fontSize="17px"
+                            fontSize={{ base: "16px", md: "17px" }}
                             style={{
                               color: "#A210C6",
                               fontStyle: "italic",
@@ -256,8 +266,8 @@ const BeneficiariesModal = ({ isOpen, onClose }) => {
                         </Box>
                         <Box>
                           <Text
-                          marginLeft="40px"
-                            fontSize="17px"
+                            marginLeft="40px"
+                            fontSize={{ base: "16px", md: "17px" }}
                             onClick={() =>
                               handleRemoveBeneficiary(beneficiary.id)
                             }
@@ -285,7 +295,7 @@ const BeneficiariesModal = ({ isOpen, onClose }) => {
             <Button
               onClick={handleOpenAddBeneficiaryForm}
               color="white"
-              bg="#510863"
+              bg="#A210C6"
               leftIcon={<AddIcon />}
             >
               Add Beneficiary

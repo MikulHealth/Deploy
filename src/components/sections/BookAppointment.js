@@ -45,7 +45,7 @@ const BookAppointmentModal = ({ isOpen, onClose }) => {
     <Modal isOpen={isOpen} onClose={onClose} size="xs">
       <ModalOverlay />
       <ModalContent  borderRadius="25px 25px 25px 0px">
-        <ModalHeader textAlign="center" color="#510863" fontWeight="bold">
+        <ModalHeader textAlign="center" color="#A210C6" fontWeight="bold">
           Book appointment
         </ModalHeader>
         <ModalCloseButton color="#510863" />
@@ -53,42 +53,42 @@ const BookAppointmentModal = ({ isOpen, onClose }) => {
           <VStack spacing={4}>
             <Box
               onClick={() => handleOpenSelfAppointmentModal(2)}
-              bg="#510863"
+              bg="#A210C6"
               color="white"
               fontWeight="bold"
               borderRadius="8px"
               cursor="pointer"
-              p="4"
+              p="2"
               textAlign="center"
-              w="100%"
+              // w="100%"
               _hover={{ bg: "gray" }}
             >
               Book for yourself
             </Box>
             <Box
               onClick={() => setBookAppointmentModalOpen(true)}
-              bg="#510863"
+              bg="#A210C6"
               color="white"
               fontWeight="bold"
               borderRadius="8px"
               cursor="pointer"
-              p="4"
+              p="2"
               textAlign="center"
-              w="100%"
+              // w="100%"
               _hover={{ bg: "gray" }}
             >
               Book for a beneficiary
             </Box>
             <Box
               onClick={() => handleOpenBeneficiaryAppointmentModal(3)}
-              bg="#510863"
+              bg="#A210C6"
               color="white"
               fontWeight="bold"
               borderRadius="8px"
               cursor="pointer"
-              p="4"
+              p="2"
               textAlign="center"
-              w="100%"
+              // w="100%"
               _hover={{ bg: "gray" }}
               marginBottom="20px"
             >

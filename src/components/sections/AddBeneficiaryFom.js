@@ -140,7 +140,7 @@ const AddBeneficiaryForm = ({ isOpen, onClose, openBeneficiariesModal }) => {
     <Drawer isOpen={isOpen} onClose={onClose} size={{ base: "md", md: "lg" }}>
       <DrawerOverlay />
       <DrawerContent maxH="70vh" overflowY="auto">
-        <DrawerHeader color="#510863">Add Beneficiary</DrawerHeader>
+        <DrawerHeader color="#A210C6">Add to Beneficiary list</DrawerHeader>
         <DrawerCloseButton />
         <DrawerBody ml={{md: "45px"}}>
           <VStack align="start" spacing={4}>
@@ -279,20 +279,21 @@ const AddBeneficiaryForm = ({ isOpen, onClose, openBeneficiariesModal }) => {
             </FormControl>
           </VStack>
         </DrawerBody>
-        <DrawerFooter>
-          <Box marginRight="20px">
-            <Button onClick={onClose} color="black" ml={3}>
+        <DrawerFooter >
+          <Box >
+            {/* <Button onClick={onClose} color="black" ml={3}>
               Cancel
-            </Button>
+            </Button> */}
             <Button
-              marginLeft="10px"
+              // marginLeft="10px"
+              align="center"
               color="white"
-              bg="#510863"
+              bg="#A210C6"
               isLoading={loading}
               loadingText="Saving..."
               onClick={handleAddBeneficiary}
             >
-              {loading ? "Saving..." : "Save"}
+              {loading ? "Saving..." : "Add as beneficiary"}
             </Button>
           </Box>
         </DrawerFooter>

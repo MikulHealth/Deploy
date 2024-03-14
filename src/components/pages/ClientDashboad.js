@@ -270,7 +270,7 @@ const ClientDash = () => {
                     marginTop="20px"
                     onClick={handleOpenWalletModal}
                     bg="white"
-                    leftIcon={<ExternalLinkIcon />}
+                    // leftIcon={<ExternalLinkIcon />}
                   >
                     fund wallet
                   </Button>
