@@ -37,10 +37,10 @@ const EditPendingAppointment = ({
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
-    onSubmit(formData);
-    onClose();
-  };
+  // const handleSubmit = () => {
+  //   onSubmit(formData);
+  //   onClose();
+  // };
 
   useEffect(() => {
     setFormData(appointmentDetails);

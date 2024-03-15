@@ -10,16 +10,12 @@ import {
   ModalBody,
   ModalFooter,
   FormControl,
-  FormLabel,
   Input,
   useToast,
   Box,
   Text,
   Button,
-  PinInput,
-  PinInputField,
 } from "@chakra-ui/react";
-import LoadingSpinner from "../../utils/Spiner";
 import { useNavigate } from "react-router-dom";
 
 const ConfirmationModal = ({ isOpen, onClose, onConfirm }) => {
@@ -80,7 +76,7 @@ const SettingsModal = ({ isOpen, onClose }) => {
     };
 
     fetchData();
-  }, []);
+  },);
 
   useEffect(() => {
     setEditedUser({

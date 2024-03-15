@@ -1,9 +1,6 @@
-import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { GetCurrentUser } from "../../apiCalls/UserApis";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import {
   Drawer,
   DrawerOverlay,
@@ -12,22 +9,18 @@ import {
   DrawerBody,
   VStack,
   Flex,
-  Image,
   Text,
   Divider,
-  Button,
   DrawerFooter,
   IconButton,
   Avatar,
 } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
-import defaultImage from "../../assets/userImage.svg";
 import EditProfileModal from "./EditUser";
 
 const UserDetailsDrawer = ({ isOpen, onClose }) => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +44,7 @@ const UserDetailsDrawer = ({ isOpen, onClose }) => {
     };
 
     fetchData();
-  }, []);
+  });
 
   const [isEditModalOpen, setEditModalOpen] = useState(false);
 

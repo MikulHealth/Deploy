@@ -53,11 +53,9 @@ const LandingPage = () => {
     });
   };
 
- 
-
   const resendOtp = async () => {
     const number = localStorage.getItem("phoneNumber");
-    const verifyNumberResponse = await axios.post(
+    await axios.post(
       "http://localhost:8080/api/v1/sms/verify-number",
       {
         phoneNumber: number,
@@ -93,7 +91,8 @@ const LandingPage = () => {
 
       toast({
         title: "Verification Successful",
-        description: "Your phone number has been verified. Kindly login with the new number",
+        description:
+          "Your phone number has been verified. Kindly login with the new number",
         status: "success",
         duration: 5000,
         isClosable: true,
@@ -101,26 +100,23 @@ const LandingPage = () => {
       setTimeout(() => {
         navigate("/login");
       }, 5000);
-
     } catch (error) {
       toast({
         title: "Verification Failed",
-        description: "Wrong or expired OTP,  confirm the code sent or click 'resend code' for a new code",
+        description:
+          "Wrong or expired OTP,  confirm the code sent or click 'resend code' for a new code",
         status: "error",
         duration: 5000,
         isClosable: true,
       });
-
     } finally {
       setLoading(false);
     }
   };
 
-
   useEffect(() => {
     AOS.init();
   }, []);
-
 
   return (
     <ChakraProvider theme={customTheme}>
@@ -194,7 +190,6 @@ const LandingPage = () => {
               color="#A210C6"
               onClick={resendOtp}
               isLoading={loading} // Display loading spinner when loading is true
-             
             >
               resend code
             </Button>

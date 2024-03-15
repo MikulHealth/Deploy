@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
 import {
-  FaMapMarkerAlt,
-  FaFile,
-  FaCalendarAlt,
   FaPhoneAlt,
-  FaUser,
 } from "react-icons/fa";
 import {
   VStack,
@@ -31,16 +26,13 @@ import {
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useDispatch, useSelector } from "react-redux";
-import BeneficiariesModal from "./Beneficiaries";
-import LocationIcon from "../../assets/LocationIcon.svg";
+import { useSelector } from "react-redux";
 import CalenderIcon from "../../assets/CalenderIcon.svg";
 
 const AddBeneficiaryForm = ({ isOpen, onClose, openBeneficiariesModal }) => {
   const [selectedDob, setSelectedDob] = useState(null);
   const [loading, setLoading] = useState(false);
   const { user } = useSelector((state) => state.userReducer);
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     customerPhoneNumber: user.phoneNumber,

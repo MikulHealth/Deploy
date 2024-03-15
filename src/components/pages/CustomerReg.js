@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -18,14 +18,13 @@ import {
   Text,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
+
   Flex,
   Input,
   InputGroup,
   InputLeftAddon,
   InputRightElement,
-  Textarea,
+
   useToast,
   Select,
 } from "@chakra-ui/react";
@@ -73,10 +72,10 @@ const LandingPage = () => {
 
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const [image, setPic] = useState();
+  const [image] = useState();
   const [show, setShow] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(null);
+  // const [selectedDate, setSelectedDate] = useState(null);
 
   // const handleInputChange = (e) => {
   //   const { name, value } = e.target;

@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
-import CanceledAppointmentsModal from "../sections/CanceledAppointments";
-import Help from "../authLayouts/Help";
 import LeftSideBar from "../authLayouts/LeftSideBar";
-import { useDispatch, useSelector } from "react-redux";
-import { PhoneIcon, AddIcon, WarningIcon, SearchIcon } from "@chakra-ui/icons";
+// import {useSelector } from "react-redux";
+import { SearchIcon } from "@chakra-ui/icons";
 import {
   ChakraProvider,
   VStack,
   Input,
   Button,
-  useToast,
+  // useToast,
   Image,
   Box,
   Text,
   Flex,
-  Link,
+
   FormControl,
   FormLabel,
   Modal,
@@ -244,9 +242,9 @@ const WalletPage = () => {
   const [showBankTransferModal, setShowBankTransferModal] = useState(false);
   const [showOnlinePaymentModal, setShowOnlinePaymentModal] = useState(false);
   const navigate = useNavigate();
-  const toast = useToast();
+  // const toast = useToast();
   const balance = 0.0;
-  const { user } = useSelector((state) => state.userReducer);
+  // const { user } = useSelector((state) => state.userReducer);
 
   const settingsContainerStyle = {
     animation: "slideInUp 0.9s ease-in-out",

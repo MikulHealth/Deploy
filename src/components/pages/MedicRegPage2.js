@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 import {
   Box,
   Button,
@@ -15,13 +15,7 @@ import {
   Text,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightElement,
-  Textarea,
   useToast,
   Select,
 } from "@chakra-ui/react";
@@ -69,11 +63,11 @@ const LandingPage = () => {
 
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const [show, setShow] = useState(false);
-  const [uploading, setUploading] = useState(false);
-  const [image, setPic] = useState();
-  const [cvCopy, setCv] = useState();
-  const [license, setLicense] = useState();
+  // const [show, setShow] = useState(false);
+  // const [uploading, setUploading] = useState(false);
+  const [image] = useState();
+  const [cvCopy] = useState();
+  const [license] = useState();
   const [cvLoading, setCvLoading] = useState(false);
   const [licenseLoading, setLicenseLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
@@ -85,7 +79,7 @@ const LandingPage = () => {
     });
   };
   const toast = useToast();
-  const handleClick = () => setShow(!show);
+  // const handleClick = () => setShow(!show);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

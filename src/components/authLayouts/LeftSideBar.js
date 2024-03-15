@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useNavigate, NavLink, useLocation } from "react-router-dom";
 import {
   VStack,
-  useDisclosure,
+  // useDisclosure,
   Image,
   Text,
   Box,
   Flex,
 } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+
 import LogoutModal from "../sections/LogoutModal";
 import logo from "../../assets/LogoColoured.svg";
 import AppointmentsIcon from "../../assets/AppointmentIcon.svg";
@@ -21,7 +21,7 @@ import LogoutIcon from "../../assets/Logout.svg";
 const LeftSideBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const handleOpenLogoutModal = () => {

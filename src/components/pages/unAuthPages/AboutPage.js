@@ -1,8 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import {
   Box,
-  Link as ChakraLink,
   Image,
   extendTheme,
   Flex,
@@ -60,6 +59,7 @@ const LandingPage = () => {
       <Box>
         <NavigationBar />
         <Box
+          style={settingsContainerStyle}
           marginTop="-1px"
           bgImage={`url(${AbtPic})`}
           bgSize="cover"

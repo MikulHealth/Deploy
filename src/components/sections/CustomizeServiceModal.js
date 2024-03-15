@@ -24,25 +24,24 @@ import {
   DrawerBody,
   DrawerFooter,
   DrawerCloseButton,
-  extendTheme,
-  Textarea,
+  // extendTheme,
 } from "@chakra-ui/react";
 
-const customTheme = extendTheme({
-  components: {
-    Link: {
-      baseStyle: {
-        _focus: {
-          boxShadow: "none",
-        },
-      },
-    },
-  },
-  fonts: {
-    body: "Montserrat, sans-serif",
-    heading: "Gill Sans MT, sans-serif",
-  },
-});
+// const customTheme = extendTheme({
+//   components: {
+//     Link: {
+//       baseStyle: {
+//         _focus: {
+//           boxShadow: "none",
+//         },
+//       },
+//     },
+//   },
+//   fonts: {
+//     body: "Montserrat, sans-serif",
+//     heading: "Gill Sans MT, sans-serif",
+//   },
+// });
 
 const CustomizePlanModal = ({ isOpen, onClose }) => {
   const [selectedServices, setSelectedServices] = useState([]);
@@ -55,7 +54,7 @@ const CustomizePlanModal = ({ isOpen, onClose }) => {
 
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
   const toast = useToast();
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.userReducer);
@@ -158,7 +157,7 @@ const CustomizePlanModal = ({ isOpen, onClose }) => {
     };
 
     fetchData();
-  }, []);
+  });
 
   const handleServiceToggle = (service) => {
     if (selectedServices.includes(service)) {

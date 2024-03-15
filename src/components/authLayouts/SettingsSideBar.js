@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Flex,
   Text,
   Divider,
   Box,
-  Image,
   extendTheme,
   VStack,
   ChakraProvider,
@@ -18,7 +17,6 @@ import {
 } from "@chakra-ui/icons";
 
 import { NavLink, useLocation } from "react-router-dom";
-import ProfileSettingsMobile from "../sections/ProfileSettingsMobile";
 
 const customTheme = extendTheme({
   components: {
@@ -38,7 +36,7 @@ const customTheme = extendTheme({
 
 export default function SettingsSideBar() {
   const location = useLocation();
-  const [showProfileMobile, setshowProfileMobile] = useState(false);
+  // const [setshowProfileMobile] = useState(false);
   const isActive = (pathname) => {
     return location.pathname === pathname;
   };
@@ -47,13 +45,13 @@ export default function SettingsSideBar() {
     color: "#A210C6",
   };
 
-  const handleCloseProleMobile = () => {
-    setshowProfileMobile(false);
-  };
+  // const handleCloseProleMobile = () => {
+  //   setshowProfileMobile(false);
+  // };
 
-  const handleOpenProleMobile = () => {
-    setshowProfileMobile(true);
-  };
+  // const handleOpenProleMobile = () => {
+  //   setshowProfileMobile(true);
+  // };
 
   return (
     <ChakraProvider theme={customTheme}>

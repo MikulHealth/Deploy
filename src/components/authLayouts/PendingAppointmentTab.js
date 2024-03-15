@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LoadingSpinner from "../../utils/Spiner";
-import { useSelector } from "react-redux";
-import { useNavigate, NavLink } from "react-router-dom";
+// import { useSelector } from "react-redux";
+import { useNavigate} from "react-router-dom";
 import axios from "axios";
 import BookAppointmentModal from "../sections/BookAppointment";
 import { EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
@@ -51,10 +51,10 @@ const customTheme = extendTheme({
 export default function PendingApp() {
   const navigate = useNavigate();
   const toast = useToast();
-  const { user } = useSelector((state) => state.userReducer);
+  // const { user } = useSelector((state) => state.userReducer);
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
-  const [selectedAppointmentId, setSelectedAppointmentId] = useState();
+  const [setSelectedAppointmentId] = useState();
   const [pendingAppointments, setPendingAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
@@ -259,7 +259,6 @@ export default function PendingApp() {
         >
           No pending appointments yet. click{" "}
           <a
-            href="#"
             style={{
               color: "#A210C6",
               fontStyle: "italic",

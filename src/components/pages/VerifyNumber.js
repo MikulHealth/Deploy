@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -14,22 +14,12 @@ import {
   extendTheme,
   ChakraProvider,
   Text,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightElement,
-  Textarea,
-  Select,
   PinInput,
   PinInputField,
 } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Coloredlogo from "../../assets/LogoColoured.svg";
+
 import "../../styles/pages/LandingPage.css";
 import logo from "../../assets/Whitelogo.png";
 
@@ -50,7 +40,6 @@ const customTheme = extendTheme({
 });
 
 const LandingPage = () => {
-  const [input, setInput] = useState("");
   const navigate = useNavigate();
   const [inputs, setInputs] = useState(["", "", "", "", "", ""]);
 
@@ -66,7 +55,7 @@ const LandingPage = () => {
 
   const resendOtp = async () => {
     const number = localStorage.getItem("phoneNumber");
-    const verifyNumberResponse = await axios.post(
+    await axios.post(
       "http://localhost:8080/api/v1/sms/verify-number",
       {
         phoneNumber: number, // Use the user's phone number
@@ -121,7 +110,8 @@ const LandingPage = () => {
       // Display error toast
       toast({
         title: "Verification Failed",
-        description: "Wrong or expired OTP,  confirm the code sent or click 'resend code' for a new code",
+        description:
+          "Wrong or expired OTP,  confirm the code sent or click 'resend code' for a new code",
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -136,12 +126,12 @@ const LandingPage = () => {
     AOS.init();
   }, []);
 
-  const handleFileChange = (event) => {
-    // Access the selected file using event.target.files
-    const selectedFile = event.target.files[0];
-    console.log(selectedFile);
-    // Perform any additional logic or state updates as needed
-  };
+  // const handleFileChange = (event) => {
+  //   // Access the selected file using event.target.files
+  //   const selectedFile = event.target.files[0];
+  //   console.log(selectedFile);
+  //   // Perform any additional logic or state updates as needed
+  // };
 
   return (
     <ChakraProvider theme={customTheme}>
@@ -215,7 +205,6 @@ const LandingPage = () => {
               color="#A210C6"
               onClick={resendOtp}
               isLoading={loading} // Display loading spinner when loading is true
-             
             >
               resend code
             </Button>

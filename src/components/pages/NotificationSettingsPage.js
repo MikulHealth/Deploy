@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
-import WebIcon from "../../assets/WebIcon.svg";
 import EmailIcon from "../../assets/EmailIcon.svg";
 import TextIcon from "../../assets/TextIcon.svg";
 import NavBar from "../authLayouts/NavBar";
@@ -37,22 +36,13 @@ const customTheme = extendTheme({
 
 const NotificationSettingsPage = () => {
   const navigate = useNavigate();
-  const [webAppNotification, setWebAppNotification] = useState(false);
-  const [emailNotification, setEmailNotification] = useState(false);
+  const [emailNotification] = useState(false);
   const [textNotification, setTextNotification] = useState(false);
 
-  const handleWebAppNotificationChange = () => {
-    // Update the state
-    setWebAppNotification(!webAppNotification);
 
-    // Make an API call to update the backend with the new setting
-    // You may need to replace 'updateWebAppNotificationSetting' with your actual API call
-    // The second parameter (true/false) represents the new setting
-    // updateWebAppNotificationSetting(!webAppNotification);
-  };
   const handleEmailNotificationChange = () => {
     // Update the state
-    setEmailNotification(!emailNotification);
+    // setEmailNotification(!emailNotification);
 
     // Make an API call to update the backend with the new setting
     // You may need to replace 'updateWebAppNotificationSetting' with your actual API call

@@ -23,14 +23,13 @@ import {
   FormLabel,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import UserDeatails from "./UserDetails";
 import LoadingSpinner from "../../utils/Spiner";
 import UpdatePhoneNumber from "./UpdatePhoneNumber";
 
 const EditProfileModal = ({ isOpen, onClose }) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
-  const [image, setPic] = useState();
+  const [image] = useState();
   const [imageLoading, setImageLoading] = useState(false);
   const [isPhoneModalOpen, setPhoneModalOpen] = useState(false);
   const [editedUser, setEditedUser] = useState({
@@ -77,7 +76,7 @@ const EditProfileModal = ({ isOpen, onClose }) => {
     };
 
     fetchData();
-  }, []);
+  });
 
  
 
@@ -216,12 +215,12 @@ const EditProfileModal = ({ isOpen, onClose }) => {
     }
   };
 
-  const handleImageClick = () => {
-    const fileInput = document.getElementById("fileInput");
-    if (fileInput) {
-      fileInput.click();
-    }
-  };
+  // const handleImageClick = () => {
+  //   const fileInput = document.getElementById("fileInput");
+  //   if (fileInput) {
+  //     fileInput.click();
+  //   }
+  // };
 
   return (
     <>

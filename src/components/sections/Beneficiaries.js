@@ -84,8 +84,8 @@ const BeneficiariesModal = ({ isOpen, onClose }) => {
     if (isOpen) {
       fetchBeneficiaries();
     }
-  }, [isOpen]);
-
+  }, [isOpen, toast]);
+  
   const formatDateTime = (dateTimeString) => {
     const options = {
       year: "numeric",

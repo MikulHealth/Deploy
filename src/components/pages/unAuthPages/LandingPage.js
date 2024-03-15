@@ -1,12 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
-import { useRoutes, Outlet } from "react-router-dom";
+import React, { useEffect} from "react";
 import {
   useDisclosure,
   Box,
-  Input,
   Button,
-  Link as ChakraLink,
   HStack,
   Spacer,
   Image,
@@ -14,9 +10,6 @@ import {
   ChakraProvider,
   Text,
   Divider,
-  Switch,
-  FormControl,
-  FormLabel,
 } from "@chakra-ui/react";
 import "animate.css";
 import MHNurse from "../../../assets/MHNurse.svg";
@@ -59,19 +52,7 @@ const LandingPage = () => {
     AOS.init();
   }, []);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
-  const handleSwitchToggle = () => {
-    setIsSwitchOn((prev) => !prev);
-  };
-  const handleMouseOver = () => {
-    // Open the modal when the user hovers over the button
-    onOpen();
-  };
 
-  const handleMouseOut = () => {
-    // Close the modal when the user moves the cursor away from the button
-    onClose();
-  };
   const settingsContainerStyle = {
     animation: "slideInUp 0.9s ease-in-out",
   };

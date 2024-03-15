@@ -1,4 +1,3 @@
-import logo from "./assets/Whitelogo.png";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/pages/unAuthPages/LandingPage";
@@ -28,7 +27,6 @@ import ServicePage from "./components/pages/ServicePage";
 import LeftSideBar from "./components/authLayouts/LeftSideBar";
 import DebitPage from "./components/pages/DebitWalletPage";
 import CustomizeServicePage from "./components/pages/CustomizeServicePage";
-import RootLayout from "./components/authLayouts/RootLayout";
 import BookButton from "./components/authLayouts/BookButton";
 import ServicesSection from "./components/unAuthLayouts/ServicesSection";
 import Faqs from "./components/unAuthLayouts/Faqs";
@@ -74,7 +72,6 @@ function App() {
           <Route path="/credit" element={<LeftSideBar />} />
           <Route path="/debit" element={<DebitPage />} />
           <Route path="/customize-service" element={<CustomizeServicePage />} />
-          <Route path="/root" element={<RootLayout />} />
           <Route path="/book" element={<BookButton />} />
           <Route path="/servicesSection" element={<ServicesSection />} />
           <Route path="/faqs" element={<Faqs />} />

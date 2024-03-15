@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { GetCurrentUser, UpdateCustomer } from "../../apiCalls/UserApis";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import {  UpdateCustomer } from "../../apiCalls/UserApis";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -24,7 +24,7 @@ import {
   Box,
   Text,
   Flex,
-  Link,
+
   Divider,
   FormControl,
   extendTheme,
@@ -53,14 +53,14 @@ const customTheme = extendTheme({
 
 const EdithProfilePage = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const toast = useToast();
   const { user } = useSelector((state) => state.userReducer);
   const [selectedDate, setSelectedDate] = useState(null);
   const [isPhoneModalOpen, setPhoneModalOpen] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [image, setPic] = useState();
+  const [image] = useState();
   const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
 
   const formatDate = (dateString) => {

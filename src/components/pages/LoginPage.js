@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { FiUnlock } from "react-icons/fi";
+
 import {
   Box,
   Button,
@@ -14,21 +13,13 @@ import {
   ChakraProvider,
   Text,
   FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   InputGroup,
-  InputLeftAddon,
   InputRightElement,
-  Textarea,
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
   ModalFooter,
-  ModalBody,
-  Icon,
   ModalCloseButton,
   useDisclosure,
   useToast,
@@ -36,7 +27,7 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Login1 from "../../assets/Login1.svg";
-import Shade from "../../assets/Shade.svg";
+
 import Google from "../../assets/GoogleIcon.svg";
 import logo from "../../assets/Whitelogo.png";
 import "../../styles/pages/LandingPage.css";
@@ -59,7 +50,6 @@ const customTheme = extendTheme({
 });
 
 const LandingPage = () => {
-  const [input, setInput] = useState("");
   const toast = useToast();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -68,13 +58,12 @@ const LandingPage = () => {
 
   const handlePhoneInputChange = (e) => setPhoneInput(e.target.value);
   const handlePasswordInputChange = (e) => setPasswordInput(e.target.value);
-  const isError = input === "";
 
   const handleLogin = async () => {
     setLoading(true);
     try {
       // const apiUrl = "http://localhost:8080/login";
-      const apiUrl = "https://backend-c1pz.onrender.com/login"
+      const apiUrl = "https://backend-c1pz.onrender.com/login";
       const headers = {
         "Content-Type": "application/json",
       };
@@ -101,7 +90,7 @@ const LandingPage = () => {
           duration: 5000,
           isClosable: true,
           position: "bottom-right",
-          icon: <UnlockIcon/>
+          icon: <UnlockIcon />,
         });
 
         setLoading(false);

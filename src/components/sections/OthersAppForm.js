@@ -1,18 +1,12 @@
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import LocationIcon from "../../assets/LocationIcon.svg";
 import CalenderIcon from "../../assets/CalenderIcon.svg";
-import {
-  FaMapMarkerAlt,
-  FaFile,
-  FaCalendarAlt,
-  FaPhoneAlt,
-  FaUser,
-} from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 import {
   Drawer,
   DrawerOverlay,
@@ -22,15 +16,12 @@ import {
   DrawerBody,
   DrawerFooter,
   Image,
-  ModalFooter,
   FormControl,
   FormLabel,
   InputGroup,
-  InputLeftElement,
   InputRightElement,
   Input,
   Button,
-  Progress,
   Flex,
   Box,
   Select,
@@ -81,7 +72,7 @@ const BeneficiaryAppointmentModal = ({ isOpen, onClose }) => {
           shift: selectedPlan.shift,
           // Removing comma and decimal point and parsing as integer
           costOfService: parseInt(
-            selectedPlan.costOfService.replace(/[\.,]/g, "")
+            selectedPlan.costOfService.replace(/[,]/g, "")
           ),
           medicSpecialization: selectedPlan.preferredCaregiver,
         });
@@ -265,7 +256,7 @@ const BeneficiaryAppointmentModal = ({ isOpen, onClose }) => {
         if (customPlan) {
           // Adding two decimal places to costOfService for custom plans
           costOfService = parseInt(
-            customPlan.costOfService.replace(/[\.,]/g, "")
+            customPlan.costOfService.replace(/[,]/g, "")
           );
         } else {
           costOfService = 0;
@@ -278,14 +269,15 @@ const BeneficiaryAppointmentModal = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     calculateServiceCost();
-  }, [formFields.servicePlan, formFields.shift]);
+  });
 
   const handleSwitchChange = async () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
       // const apiUrl = "http://localhost:8080/v1/appointment/addNewBeneficiary";
-      const apiUrl = "https://backend-c1pz.onrender.com/v1/appointment/addNewBeneficiary";
+      const apiUrl =
+        "https://backend-c1pz.onrender.com/v1/appointment/addNewBeneficiary";
       const headers = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,

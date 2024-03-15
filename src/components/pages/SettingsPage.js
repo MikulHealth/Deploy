@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import LeftSideBar from "../authLayouts/LeftSideBar";
 import NavBar from "../authLayouts/NavBar";
@@ -32,10 +32,6 @@ const customTheme = extendTheme({
 });
 
 const SettingsPage = () => {
-  const pageStyle = {
-    animation: "slideIn 0.5s ease-in-out",
-  };
-
   const settingsContainerStyle = {
     animation: "slideInUp 0.9s ease-in-out",
   };
@@ -63,7 +59,7 @@ const SettingsPage = () => {
             />
           </Box>
         </Flex>
-        <MobileFooter/>
+        <MobileFooter />
       </VStack>
     </ChakraProvider>
   );

@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 import {
   Box,
   Button,
@@ -13,20 +13,16 @@ import {
   Text,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
+
   Input,
   InputGroup,
-  InputLeftAddon,
+
   InputRightElement,
-  Textarea,
-  Select,
-  PinInput,
-  PinInputField,
+
 } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Coloredlogo from "../../assets/LogoColoured.svg";
+
 import "../../styles/pages/LandingPage.css";
 import logo from "../../assets/Whitelogo.png";
 
@@ -47,12 +43,6 @@ const customTheme = extendTheme({
 });
 
 const LandingPage = () => {
-  const [input, setInput] = useState("");
-
-  const handleInputChange = (e) => setInput(e.target.value);
-
-  const isError = input === "";
-
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
 
@@ -60,12 +50,12 @@ const LandingPage = () => {
     AOS.init();
   }, []);
 
-  const handleFileChange = (event) => {
-    // Access the selected file using event.target.files
-    const selectedFile = event.target.files[0];
-    console.log(selectedFile);
-    // Perform any additional logic or state updates as needed
-  };
+  // const handleFileChange = (event) => {
+  //   // Access the selected file using event.target.files
+  //   const selectedFile = event.target.files[0];
+  //   console.log(selectedFile);
+  //   // Perform any additional logic or state updates as needed
+  // };
 
   return (
     <ChakraProvider theme={customTheme}>

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import LocationIcon from "../../assets/LocationIcon.svg";
 import CalenderIcon from "../../assets/CalenderIcon.svg";
 import {
-  InputLeftAddon,
   InputGroup,
   Drawer,
   DrawerOverlay,
@@ -13,7 +12,6 @@ import {
   DrawerFooter,
   DrawerCloseButton,
   useToast,
-  ModalFooter,
   Button,
   Input,
   Select,
@@ -22,9 +20,6 @@ import {
   FormControl,
   FormLabel,
   Box,
-  Text,
-  InputLeftElement,
-  InputRightElement,
   Flex,
 } from "@chakra-ui/react";
 import DatePicker from "react-datepicker";
@@ -236,11 +231,11 @@ const BookBeneficiaryAppointmentModal = ({
     }
     return true;
   };
-  const validateNigerianPhoneNumber = (phoneNumber) => {
-    // Regular expression to match Nigerian phone numbers
-    const nigerianPhoneNumberRegex = /^(?:\+234|234)([789]\d{9})$/;
-    return nigerianPhoneNumberRegex.test(phoneNumber);
-  };
+  // const validateNigerianPhoneNumber = (phoneNumber) => {
+  //   // Regular expression to match Nigerian phone numbers
+  //   const nigerianPhoneNumberRegex = /^(?:\+234|234)([789]\d{9})$/;
+  //   return nigerianPhoneNumberRegex.test(phoneNumber);
+  // };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -325,7 +320,7 @@ const BookBeneficiaryAppointmentModal = ({
         if (customPlan) {
           // Adding two decimal places to costOfService for custom plans
           costOfService = parseInt(
-            customPlan.costOfService.replace(/[\.,]/g, "")
+            customPlan.costOfService.replace(/[,]/g, "")
           );
         } else {
           costOfService = 0;

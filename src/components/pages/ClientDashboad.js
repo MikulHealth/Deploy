@@ -8,7 +8,7 @@ import BookAppointmentModal from "../sections/BookAppointment";
 import MatchedAppointmentsModal from "../sections/MatchedAppointmentsModal";
 import PayForAppointmentModal from "../sections/PayForAppointment";
 import Help from "../authLayouts/Help";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+
 import {
   Box,
   Button,
@@ -18,16 +18,13 @@ import {
   extendTheme,
   ChakraProvider,
   Text,
-  useToast,
-  Skeleton,
-  Grid,
-  GridItem,
+
 } from "@chakra-ui/react";
 import AOS from "aos";
 import "../../styles/pages/LandingPage.css";
 import BeneficiariesModal from "../sections/Beneficiaries";
 import Tele from "../../assets/Telemed.svg";
-import LoadingSpinner from "../../utils/Spiner";
+
 import NavBar from "../authLayouts/NavBar";
 import Services from "../../assets/services.jpg";
 import BookIcon from "../../assets/appointment.png";
@@ -52,7 +49,7 @@ const customTheme = extendTheme({
 });
 
 const ClientDash = () => {
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const [isBeneficiariesModalOpen, setBeneficiariesModalOpen] = useState(false);
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const navigate = useNavigate();
@@ -63,8 +60,8 @@ const ClientDash = () => {
   const activeAppointments = user?.numberOfActiveAppointments;
   const completedAppointments = user?.numberOfCompletedAppointments;
   const [pendingAppointment, setPendingAppointment] = useState(null);
-  const [showSkeleton, setShowSkeleton] = useState(true);
-  const [apiMessage, setApiMessage] = useState("");
+  const [setShowSkeleton] = useState(true);
+  const [apiMessage] = useState("");
   const [showPayAppointmentModal, setShowPayAppointmentModal] = useState(false);
   const [matchedAppointments, setMatchedAppointments] = useState([]);
   const [showMatchedAppointmentsModal, setShowMatchedAppointmentsModal] =
