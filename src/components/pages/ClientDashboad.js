@@ -18,7 +18,6 @@ import {
   extendTheme,
   ChakraProvider,
   Text,
-
 } from "@chakra-ui/react";
 import AOS from "aos";
 import "../../styles/pages/LandingPage.css";
@@ -49,7 +48,7 @@ const customTheme = extendTheme({
 });
 
 const ClientDash = () => {
-  const [setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [isBeneficiariesModalOpen, setBeneficiariesModalOpen] = useState(false);
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const navigate = useNavigate();
@@ -60,7 +59,7 @@ const ClientDash = () => {
   const activeAppointments = user?.numberOfActiveAppointments;
   const completedAppointments = user?.numberOfCompletedAppointments;
   const [pendingAppointment, setPendingAppointment] = useState(null);
-  const [setShowSkeleton] = useState(true);
+  // const [setShowSkeleton] = useState(true);
   const [apiMessage] = useState("");
   const [showPayAppointmentModal, setShowPayAppointmentModal] = useState(false);
   const [matchedAppointments, setMatchedAppointments] = useState([]);
@@ -95,7 +94,7 @@ const ClientDash = () => {
       } catch (error) {
         console.error("Error fetching appointments:", error);
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     };
 
@@ -177,7 +176,7 @@ const ClientDash = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
+      // setLoading(true);
 
       if (localStorage.getItem("token")) {
         try {
@@ -193,8 +192,8 @@ const ClientDash = () => {
         } catch (error) {
           console.error("Error in GetCurrentUser API:", error);
         } finally {
-          setLoading(false);
-          setShowSkeleton(false);
+          // setLoading(false);
+          // setShowSkeleton(false);
         }
       } else {
         navigate("/login");
@@ -217,13 +216,13 @@ const ClientDash = () => {
       <LeftSideBar />
       <VStack
         style={settingsContainerStyle}
-        ml={{ md: "250px" }}
-        position="fixed"
+        ml={{ md: "230px" }}
         w={{ base: "100%", md: "80%" }}
         h={{ base: "100%", md: "100%" }}
       >
         <NavBar />
         <Flex
+          // overflow="scroll"
           mt={{ base: "0", md: "30px" }}
           flexDirection={{ base: "column", md: "row" }}
           alignItems={{ base: "center", md: "flex-start" }}
@@ -273,87 +272,77 @@ const ClientDash = () => {
                   </Button>
                 </VStack>
               </Flex>
-              <Flex marginLeft={{ base: "5px", md: "50px" }} marginTop="30px">
-                <VStack
-                  marginBottom={{ base: "50px", md: "0" }}
-                  marginLeft={{ base: "-50px", md: "-120px" }}
-                  color="white"
+              <VStack
+              
+                marginBottom={{ base: "50px", md: "0" }}
+                // marginLeft={{ base: "-50px", md: "-350px" }}
+                color="white"
+              >
+                <Text
+                  display={{ base: "none", md: "block" }}
+                  justify="left"
+                  fontSize={{ base: "10px", md: "16px" }}
                 >
-                  <Text
-                    display={{ base: "none", md: "block" }}
-                    marginLeft={{ base: "65px", md: "-30px" }}
-                    fontSize={{ base: "10px", md: "16px" }}
-                  >
-                    Wallet ID:
-                  </Text>
-                  <Text
-                    // marginBottom={{ base: "10px", md: "0" }}
-                    marginLeft={{ base: "65px", md: "95px" }}
-                    fontSize={{ base: "10px", md: "16px" }}
-                  >
-                    Wema Bank 0124536789
-                  </Text>
-                </VStack>
-                <Flex
-                  display={{ base: "none", md: "flex" }}
-                  marginLeft={{ base: "", md: "250px" }}
+                  Wallet ID:
+                </Text>
+                <Text
+                  // marginBottom={{ base: "10px", md: "0" }}
+                  justify="left"
+                  fontSize={{ base: "10px", md: "16px" }}
                 >
-                  <VStack color="white">
-                    <Text fontSize="14px">Total funded</Text>
-                    <Text color="white" fontSize="12px" marginLeft="-44px">
-                      ₦{balance.toFixed(2)}
-                    </Text>
-                  </VStack>
-                  <VStack color="white" marginLeft="50px">
-                    <Text fontSize="14px">Total spent</Text>
-                    <Text color="white" fontSize="12px" marginLeft="-34px">
-                      ₦{balance.toFixed(2)}
-                    </Text>
-                  </VStack>
-                </Flex>
-              </Flex>
+                  Wema Bank 0124536789
+                </Text>
+              </VStack>
             </Box>
 
             <Box marginTop="-5px">
-              <Flex >
+              <Flex>
                 <Box
-                  style={{
-                    // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
-                    transition: "transform 0.3s ease-in-out",
-                  }}
+                  style={
+                    {
+                      // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
+                      // transition: "transform 0.3s ease-in-out",
+                    }
+                  }
                   bg="#DCFFEB"
                   h={{ base: "125px", md: "150px" }}
                   mt={{ base: "4", md: "0" }}
                   w={{ base: "180px", md: "340px" }}
                   borderRadius="10px"
-                  _hover={{
-                    transform: "translateY(-10px)",
-                  }}
+                  _hover={
+                    {
+                      // transform: "translateY(-10px)",
+                    }
+                  }
                 >
                   <Box
                     display={{ base: "block", md: "flex" }}
-                    alignItems="center"
+                    // alignItems="center"
                   >
-                    <Image
+                    {/* <Image
                       src={BookIcon}
                       margin={{ base: "10px", md: "15px" }}
                       w={{ base: "25px", md: "60px" }}
                       h={{ base: "25px", md: "60px" }}
                       borderRadius="100px"
-                    />
-                    <VStack mt={{ base: "-10px" }} alignItems="center">
+                    /> */}
+                    <VStack
+                      mt={{ base: "25px", md: "20px" }}
+                      justifyItems="center"
+                    >
                       <Text
-                        textAlign="left"
+                        textAlign="center"
                         fontSize={{ base: "14px", md: "20px" }}
                         fontFamily="heading"
+                        ml={{ md: "30px" }}
                         color="black"
                       >
                         Book Appointment
                       </Text>
                       <Text
                         // display={{ base: "none", lg: "block" }}
-                        textAlign="left"
-                        fontSize={{ base: "10px", md: "16px" }}
+                        textAlign="center"
+                        fontSize={{ base: "8px", md: "16px" }}
                       >
                         Schedule your appointment
                       </Text>
@@ -378,13 +367,17 @@ const ClientDash = () => {
                 </Box>
 
                 <Box
-                  style={{
-                    // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
-                    transition: "transform 0.3s ease-in-out",
-                  }}
-                  _hover={{
-                    transform: "translateY(-10px)",
-                  }}
+                  style={
+                    {
+                      // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
+                      // transition: "transform 0.3s ease-in-out",
+                    }
+                  }
+                  _hover={
+                    {
+                      // transform: "translateY(-10px)",
+                    }
+                  }
                   bg="#E7F6FF"
                   h={{ base: "125px", md: "150px" }}
                   mt={{ base: "4", md: "0" }}
@@ -397,14 +390,14 @@ const ClientDash = () => {
                     display={{ base: "block", md: "flex" }}
                     alignItems="center"
                   >
-                    <Image
+                    {/* <Image
                       src={Beneficiary}
                       margin={{ base: "10px", md: "15px" }}
                       w={{ base: "25px", md: "60px" }}
                       h={{ base: "25px", md: "60px" }}
                       borderRadius="100px"
-                    />
-                    <VStack mt={{ base: "-10px" }}>
+                    /> */}
+                    <VStack mt={{ base: "25px" }}>
                       <Text
                         textAlign="left"
                         fontSize={{ base: "14px", md: "20px" }}
@@ -414,8 +407,8 @@ const ClientDash = () => {
                         Beneficiaries
                       </Text>
                       <Text
-                        textAlign="left"
-                        fontSize={{ base: "10px", md: "16px" }}
+                        textAlign="center"
+                        fontSize={{ base: "8px", md: "16px" }}
                       >
                         Your friends and loved ones
                       </Text>
@@ -438,15 +431,19 @@ const ClientDash = () => {
                   </Text>
                 </Box>
               </Flex>
-              <Flex mt={{ base: "", md: "10px" }}>
+              <Flex mt={{ base: "", md: "30px" }}>
                 <Box
-                  style={{
-                    // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
-                    transition: "transform 0.3s ease-in-out",
-                  }}
-                  _hover={{
-                    transform: "translateY(-10px)",
-                  }}
+                  style={
+                    {
+                      // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
+                      // transition: "transform 0.3s ease-in-out",
+                    }
+                  }
+                  _hover={
+                    {
+                      // transform: "translateY(-10px)",
+                    }
+                  }
                   bg="#CCF0FE"
                   h={{ base: "125px", md: "150px" }}
                   mt={{ base: "3", md: "0" }}
@@ -457,16 +454,16 @@ const ClientDash = () => {
                     display={{ base: "block", md: "flex" }}
                     alignItems="center"
                   >
-                    <Image
+                    {/* <Image
                       src={Services}
                       margin={{ base: "10px", md: "15px" }}
                       w={{ base: "25px", md: "60px" }}
                       h={{ base: "25px", md: "60px" }}
                       borderRadius="100px"
-                    />
-                    <VStack mt={{ base: "-10px" }}>
+                    /> */}
+                    <VStack mt={{ base: "25px" }}>
                       <Text
-                        textAlign="left"
+                        textAlign="center"
                         fontSize={{ base: "14px", md: "20px" }}
                         fontFamily="heading"
                         color="black"
@@ -474,8 +471,8 @@ const ClientDash = () => {
                         Our services
                       </Text>
                       <Text
-                        textAlign="left"
-                        fontSize={{ base: "10px", md: "16px" }}
+                        textAlign="center"
+                        fontSize={{ base: "8px", md: "16px" }}
                       >
                         Explore a variety of our services
                       </Text>
@@ -500,13 +497,17 @@ const ClientDash = () => {
                   </NavLink>
                 </Box>
                 <Box
-                  style={{
-                    // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
-                    transition: "transform 0.3s ease-in-out",
-                  }}
-                  _hover={{
-                    transform: "translateY(-10px)",
-                  }}
+                  style={
+                    {
+                      // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
+                      // transition: "transform 0.3s ease-in-out",
+                    }
+                  }
+                  _hover={
+                    {
+                      // transform: "translateY(-10px)",
+                    }
+                  }
                   bg="#F1ECFE"
                   h={{ base: "125px", md: "150px" }}
                   mt={{ base: "3", md: "0" }}
@@ -518,16 +519,16 @@ const ClientDash = () => {
                     display={{ base: "block", md: "flex" }}
                     alignItems="center"
                   >
-                    <Image
+                    {/* <Image
                       src={Report}
                       margin={{ base: "10px", md: "15px" }}
                       w={{ base: "25px", md: "60px" }}
                       h={{ base: "25px", md: "60px" }}
                       borderRadius="100px"
-                    />
-                    <VStack mt={{ base: "-10px" }}>
+                    /> */}
+                    <VStack mt={{ base: "25px" }}>
                       <Text
-                        textAlign="left"
+                        textAlign="center"
                         fontSize={{ base: "14px", md: "20px" }}
                         fontFamily="heading"
                         color="black"
@@ -535,8 +536,8 @@ const ClientDash = () => {
                         Medical Report
                       </Text>
                       <Text
-                        textAlign="left"
-                        fontSize={{ base: "10px", md: "16px" }}
+                        textAlign="center"
+                        fontSize={{ base: "8px", md: "16px" }}
                       >
                         Access and view your reports
                       </Text>
@@ -559,6 +560,72 @@ const ClientDash = () => {
                   </Text>
                 </Box>
               </Flex>
+              <Box
+                style={
+                  {
+                    // boxShadow: "0px 4px 8px rgba(162, 16, 198, 0.4)",
+                    // transition: "transform 0.3s ease-in-out",
+                  }
+                }
+                _hover={
+                  {
+                    // transform: "translateY(-10px)",
+                  }
+                }
+                bg="#F1ECFE"
+                h={{ base: "125px", md: "150px" }}
+                mt={{ base: "30px", md: "30px" }}
+                mb={{ base: "-10px", md: "30px" }}
+                w={{ base: "180px", md: "340px" }}
+                // marginLeft="10px"
+                borderRadius="10px"
+              >
+                <Box
+                  display={{ base: "block", md: "flex" }}
+                  alignItems="center"
+                >
+                  {/* <Image
+                    src={Report}
+                    margin={{ base: "10px", md: "15px" }}
+                    w={{ base: "25px", md: "60px" }}
+                    h={{ base: "25px", md: "60px" }}
+                    borderRadius="100px"
+                  /> */}
+                  <VStack mt={{ base: "-15px", md: "10px" }}>
+                    <Text
+                      mt={{ base: "5px", md: "" }}
+                      textAlign="center"
+                      fontSize={{ base: "14px", md: "20px" }}
+                      fontFamily="heading"
+                      color="black"
+                    >
+                      Customize Service plans
+                    </Text>
+                    <Text
+                      textAlign="center"
+                      fontSize={{ base: "8px", md: "14px" }}
+                    >
+                      Choose the kind of service you want, how and when you want
+                      it
+                    </Text>
+                  </VStack>
+                </Box>
+
+                <Text
+                  fontSize={{ base: "12px", md: "14px" }}
+                  fontWeight="bold"
+                  textAlign="center"
+                  style={{
+                    marginTop: "10px",
+                    fontStyle: "italic",
+                    cursor: "pointer",
+                  }}
+                  color="#753FF6"
+                  _hover={{ color: "#A210C6" }}
+                >
+                  Customize service
+                </Text>
+              </Box>
             </Box>
           </Box>
 
@@ -625,10 +692,11 @@ const ClientDash = () => {
                 paddingTop="40px"
               />
             </Box>
+            <Help />
           </Box>
-          <Help />
+         
         </Flex>
-        <MobileFooter/>
+        <MobileFooter />
       </VStack>
 
       <BeneficiariesModal

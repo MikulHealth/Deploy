@@ -111,7 +111,7 @@ export default function NavBar() {
 
   return (
     <ChakraProvider theme={customTheme}>
-      <header style={{ position: "sticky", top: 0, zIndex: 1000 }}>
+      <header style={{  top: 0, zIndex: 1000 }}>
         <Drawer size="xs" isOpen={isOpen} onClose={onClose} placement="left">
           <DrawerOverlay />
           <DrawerContent>

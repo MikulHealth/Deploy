@@ -10,8 +10,8 @@ export default function Help() {
   return (
     <Box
       display={{ base: "none", lg: "block" }}
-      marginTop="400px"
-      marginLeft="5px"
+      marginTop="100px"
+      marginLeft="100px"
     >
       <Image
         onClick={help}
