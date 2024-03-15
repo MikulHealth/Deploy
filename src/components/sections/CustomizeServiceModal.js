@@ -50,7 +50,7 @@ const CustomizePlanModal = ({ isOpen, onClose }) => {
   const [shift, setShift] = useState("");
   const [medicSpecialization, setMedicSpecialization] = useState("");
   const [name, setName] = useState("");
-  const [costOfService, setCostOfService] = useState(0);
+  const [costOfService] = useState(0);
 
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
   const toast = useToast();
@@ -86,41 +86,40 @@ const CustomizePlanModal = ({ isOpen, onClose }) => {
     "Dressing changes",
   ];
 
-  const calculateCost = () => {
-    let costPerDay = 0;
+  // const calculateCost = () => {
+  //   let costPerDay = 0;
 
-    // Determine the cost per day based on the caregiver
-    if (medicSpecialization === "Nurse Assistant") {
-      costPerDay = 6000;
-    } else {
-      costPerDay = 12000;
-    }
+    
+  //   if (medicSpecialization === "Nurse Assistant") {
+  //     costPerDay = 6000;
+  //   } else {
+  //     costPerDay = 12000;
+  //   }
 
-    // Adjust cost per day based on the type of shift chosen
-    if (shift === "Day Shift") {
-      costPerDay *= 1; // No adjustment needed for 8hrs shift
-    } else if (shift === "Live-in") {
-      // Adjust cost for 24hrs shift
-      if (medicSpecialization === "Nurse Assistant") {
-        costPerDay = 8000;
-      } else {
-        costPerDay = 16000;
-      }
-    }
+   
+  //   if (shift === "Day Shift") {
+  //     costPerDay *= 1; 
+  //   } else if (shift === "Live-in") {
+  
+  //     if (medicSpecialization === "Nurse Assistant") {
+  //       costPerDay = 8000;
+  //     } else {
+  //       costPerDay = 16000;
+  //     }
+  //   }
 
-    // Calculate the total cost based on duration
-    const totalCost = costPerDay * parseInt(duration);
-    return totalCost.toLocaleString("en-NG", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }); // Format the total cost
-  };
+   
+  //   const totalCost = costPerDay * parseInt(duration);
+  //   return totalCost.toLocaleString("en-NG", {
+  //     minimumFractionDigits: 2,
+  //     maximumFractionDigits: 2,
+  //   }); 
+  // };
 
-  useEffect(() => {
-    // Update costOfService whenever duration or preferredCaregiver changes
-    const calculatedCost = calculateCost();
-    setCostOfService(calculatedCost);
-  }, [duration, medicSpecialization]);
+  // useEffect(() => {
+  //   const calculatedCost = calculateCost();
+  //   setCostOfService(calculatedCost);
+  // }, [duration, medicSpecialization]);
 
   const formattedCost = (cost) => {
     // Format the costOfService as naira with the last two zeros separated by a dot
