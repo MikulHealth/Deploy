@@ -12,16 +12,13 @@ import {
   ModalFooter,
   Box,
   Flex,
-  Spinner,
   Progress,
-  Image,
   useToast,
   Divider,
 } from "@chakra-ui/react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
-import userImageIcon from "../../assets/userImage.svg";
 
 const SearchAppointmentsModal = ({ isOpen, onClose }) => {
   const [selectedDate, setSelectedDate] = useState(null);

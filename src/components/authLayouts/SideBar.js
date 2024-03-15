@@ -1,27 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, NavLink, useLocation } from "react-router-dom";
 import LogoutModal from "../sections/LogoutModal";
-import NotificationIcon from "../../assets/notification.svg";
+
 import Wallet from "../../assets/WalletWhite.svg";
-import HomeIcon from "../../assets/HomeBlack.svg";
+
 import {
   SettingsIcon,
   LockIcon,
   PlusSquareIcon,
   CalendarIcon,
-  EmailIcon,
   HamburgerIcon,
 } from "@chakra-ui/icons";
-import logo from "../../assets/Secondary logo.svg";
-import {
-  Box,
-  Text,
-  useToast,
-  Flex,
-  extendTheme,
-  Icon,
-  Image,
-} from "@chakra-ui/react";
+
+import { Box, Text, useToast, Flex, extendTheme, Icon } from "@chakra-ui/react";
 
 const customTheme = extendTheme({
   components: {
@@ -64,9 +55,9 @@ export default function SideBar() {
     setShowLogoutModal(true);
   };
 
-  const reloadPage = () => {
-    window.location.reload();
-  };
+  // const reloadPage = () => {
+  //   window.location.reload();
+  // };
 
   const iconStyle = {
     marginRight: "10px",

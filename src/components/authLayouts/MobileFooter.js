@@ -6,11 +6,10 @@ import AppointmentsIcon from "../../assets/AppointmentIcon.svg";
 import WalletIcon from "../../assets/Wallet.svg";
 import HelpIcon from "../../assets/HelppIcon.svg";
 import LogoutModal from "../sections/LogoutModal";
-import Help from "./Help";
-import HelpMobile from "./HelpMobile";
+
 
 const MobileFooter = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onClose } = useDisclosure();
   const listItemStyle = {
     fontStyle: "body",
     fontSize: "14px",

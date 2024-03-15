@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { CheckIcon } from "@chakra-ui/icons";
 import {
   Modal,
@@ -10,7 +10,6 @@ import {
   Flex,
   ModalBody,
   ModalCloseButton,
-  Tooltip,
   Text,
   Button,
 } from "@chakra-ui/react";

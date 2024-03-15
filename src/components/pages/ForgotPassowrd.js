@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 import {
   Box,
   Button,
@@ -13,20 +13,11 @@ import {
   Text,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightElement,
-  Textarea,
-  Select,
-  PinInput,
-  PinInputField,
 } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Coloredlogo from "../../assets/LogoColoured.svg";
+
 import "../../styles/pages/LandingPage.css";
 import logo from "../../assets/Whitelogo.png";
 
@@ -47,25 +38,9 @@ const customTheme = extendTheme({
 });
 
 const LandingPage = () => {
-  const [input, setInput] = useState("");
-
-  const handleInputChange = (e) => setInput(e.target.value);
-
-  const isError = input === "";
-
-  const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show);
-
   useEffect(() => {
     AOS.init();
   }, []);
-
-  const handleFileChange = (event) => {
-    // Access the selected file using event.target.files
-    const selectedFile = event.target.files[0];
-    console.log(selectedFile);
-    // Perform any additional logic or state updates as needed
-  };
 
   return (
     <ChakraProvider theme={customTheme}>
@@ -82,7 +57,7 @@ const LandingPage = () => {
           <HStack spacing={10}>
             <Box w="5px" />
             <a href="/">
-            <Image src={logo} alt="Logo" w="100px" h="30px" />
+              <Image src={logo} alt="Logo" w="100px" h="30px" />
             </a>
             <Spacer />
             <Spacer />
@@ -114,13 +89,13 @@ const LandingPage = () => {
             marginTop="30px"
           >
             A one-time link will be sent to your email address <br></br>
-           for you to change your password
+            for you to change your password
           </Text>
           <FormControl isRequired w="500px" marginLeft="430px" marginTop="50px">
             <FormLabel>Enter email address or phone number</FormLabel>
             <Input placeholder="Enter email address or phone number" />
           </FormControl>
-      
+
           <ChakraLink href="/verify-otp">
             <Button
               w="250px"

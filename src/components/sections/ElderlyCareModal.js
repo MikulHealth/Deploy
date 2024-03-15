@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { CheckIcon } from "@chakra-ui/icons";
 import {
   Modal,
@@ -9,11 +9,9 @@ import {
   Flex,
   Button,
   Divider,
-  Link,
   ModalBody,
   ModalCloseButton,
   Text,
-  Tooltip,
 } from "@chakra-ui/react";
 import BookAppointmentModal from "../sections/BookAppointment";
 const ElderlyCareModal = ({ isOpen, onClose }) => {

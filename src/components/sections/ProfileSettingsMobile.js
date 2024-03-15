@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { GetCurrentUser, UpdateCustomer } from "../../apiCalls/UserApis";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState} from "react";
+import { UpdateCustomer } from "../../apiCalls/UserApis";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import DateIcon from "../../assets/DateIcon.svg";
 import NavBar from "../authLayouts/NavBar";
-import LeftSideBar from "../authLayouts/LeftSideBar";
 import {
   DrawerCloseButton,
   VStack,
@@ -24,31 +23,29 @@ import {
   Box,
   Text,
   Flex,
-  Link,
   Divider,
   FormControl,
-  extendTheme,
+  // extendTheme,
   FormLabel,
 } from "@chakra-ui/react";
 import LoadingSpinner from "../../utils/Spiner";
-import UpdatePhoneNumber from "../sections/UpdatePhoneNumber";
 import SettingsSideBar from "../authLayouts/SettingsSideBar";
 
-const customTheme = extendTheme({
-  components: {
-    Link: {
-      baseStyle: {
-        _focus: {
-          boxShadow: "none",
-        },
-      },
-    },
-  },
-  fonts: {
-    body: "Montserrat, sans-serif",
-    heading: "Gill Sans MT, sans-serif",
-  },
-});
+// const customTheme = extendTheme({
+//   components: {
+//     Link: {
+//       baseStyle: {
+//         _focus: {
+//           boxShadow: "none",
+//         },
+//       },
+//     },
+//   },
+//   fonts: {
+//     body: "Montserrat, sans-serif",
+//     heading: "Gill Sans MT, sans-serif",
+//   },
+// });
 
 const ProfileSettingsMobile = () => {
   const navigate = useNavigate();
@@ -57,10 +54,10 @@ const ProfileSettingsMobile = () => {
   const toast = useToast();
   const { user } = useSelector((state) => state.userReducer);
   const [selectedDate, setSelectedDate] = useState(null);
-  const [isPhoneModalOpen, setPhoneModalOpen] = useState(false);
+  const [setPhoneModalOpen] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
-  const [image, setPic] = useState();
-  const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
+  const [image] = useState();
+  const [setConfirmationModalOpen] = useState(false);
 
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
@@ -71,9 +68,9 @@ const ProfileSettingsMobile = () => {
     return formattedDate;
   };
 
-  const handleOpenDrawer = () => {
-    setIsDrawerOpen(true);
-  };
+  // const handleOpenDrawer = () => {
+  //   setIsDrawerOpen(true);
+  // };
 
   const handleCloseDrawer = () => {
     setIsDrawerOpen(false);

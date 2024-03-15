@@ -2,33 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LoadingSpinner from "../../utils/Spiner";
 import BookAppointmentModal from "../sections/BookAppointment";
-import { EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
+import { CloseIcon } from "@chakra-ui/icons";
 import {
-  ChakraProvider,
   VStack,
-  Input,
   Drawer,
   DrawerOverlay,
   DrawerContent,
   DrawerHeader,
   DrawerBody,
-  Progress,
   Button,
   useToast,
-  Image,
   Box,
   Text,
   Flex,
-  extendTheme,
-  Link,
-  FormControl,
   Divider,
-  FormLabel,
-  Tabs,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
 } from "@chakra-ui/react";
 export default function AppointmentTab() {
   const toast = useToast();
@@ -156,19 +143,22 @@ export default function AppointmentTab() {
             fontSize={{ base: "10px", md: "16px" }}
             ml={{ base: "10px", md: "35px" }}
           >
-            No appointments yet. click{" "}
-            <a
-              href="#"
+            No appointments yet. Click{" "}
+            <button
               style={{
                 color: "#A210C6",
                 fontStyle: "italic",
                 textDecoration: "none",
                 cursor: "pointer",
+                border: "none",
+                background: "none",
+                padding: "0",
+                font: "inherit",
               }}
               onClick={handleOpenAppointmentModal}
             >
               book appointment
-            </a>{" "}
+            </button>{" "}
             to begin.
           </Text>
         ) : (

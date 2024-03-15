@@ -9,9 +9,9 @@ export default function BookButton() {
     };
 
     
-  const handleOpenAppointmentModal = () => {
-    setShowAppointmentModal(true);
-  };
+//   const handleOpenAppointmentModal = () => {
+//     setShowAppointmentModal(true);
+//   };
 
     return (
         <div>

@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 import {
   Box,
   Button,
@@ -15,13 +15,10 @@ import {
   Text,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   InputGroup,
   InputLeftAddon,
   InputRightElement,
-  Textarea,
   useToast,
   Select,
 } from "@chakra-ui/react";

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import {
   VStack,
   Text,
-  Button,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -64,7 +63,7 @@ const CanceledAppointmentsModal = ({ isOpen, onClose }) => {
     if (isOpen) {
       fetchCanceledAppointments();
     }
-  }, [isOpen]);
+  });
 
   return (
     <>

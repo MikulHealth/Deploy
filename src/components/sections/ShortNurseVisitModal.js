@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { CheckIcon} from "@chakra-ui/icons";
-import { useNavigate, NavLink } from "react-router-dom";
 import BookAppointmentModal from "../sections/BookAppointment";
 import {
   Modal,
@@ -13,7 +12,6 @@ import {
   ModalBody,
   ModalCloseButton,
   Text,
-  Tooltip,
   Button,
 } from "@chakra-ui/react";
 

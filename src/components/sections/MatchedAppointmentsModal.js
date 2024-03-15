@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import {
   Modal,
   ModalOverlay,
@@ -47,8 +46,8 @@ const MatchedAppointmentsModal = ({
   const [cancellingAppointmentId, setCancellingAppointmentId] = useState(null);
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
   const [selectedAppointment, setSelectedAppointment] = useState(null);
-  const navigate = useNavigate();
-  const { user } = useSelector((state) => state.userReducer);
+  // const navigate = useNavigate();
+  // const { user } = useSelector((state) => state.userReducer);
   const noMatchedCaregiver =
     !matchedAppointments ||
     !Array.isArray(matchedAppointments) ||

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "react-datepicker/dist/react-datepicker.css";
 import BookAppointmentModal from "../sections/BookAppointment";
 import { SearchIcon } from "@chakra-ui/icons";
@@ -9,7 +8,6 @@ import {
   ChakraProvider,
   VStack,
   Button,
-  useToast,
   Image,
   Box,
   Text,
@@ -24,9 +22,7 @@ import {
 import { CheckIcon } from "@chakra-ui/icons";
 import familyIcon from "../../assets/family.svg";
 import SearchAppointmentsModal from "../sections/SearchAppointmentByDate";
-import SideBar from "../authLayouts/SideBar";
 import NavBar from "../authLayouts/NavBar";
-import Help from "../authLayouts/Help";
 import AppointmentTab from "../authLayouts/AllAppointmentTab";
 import PendingApp from "../authLayouts/PendingAppointmentTab";
 import MobileFooter from "../authLayouts/MobileFooter";
@@ -231,7 +227,7 @@ const AppointmentPage = () => {
                 </TabPanel>
               </TabPanels>
             </Tabs>
-            <MobileFooter/>
+            <MobileFooter />
           </VStack>
           {/* <Help /> */}
         </Flex>

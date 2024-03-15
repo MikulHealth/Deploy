@@ -18,8 +18,8 @@ import {
   Image,
   Spacer,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState} from "react";
+import { useSelector } from "react-redux";
 import UserDetailsModal from "../sections/UserDetails";
 import { useNavigate, NavLink, useLocation } from "react-router-dom";
 import LogoutIcon from "../../assets/Logout.svg";
@@ -51,7 +51,7 @@ export default function NavBar() {
   const { user } = useSelector((state) => state.userReducer);
   const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showUserDetailsModal, setShowUserDetailsModal] = useState(false);

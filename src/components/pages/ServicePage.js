@@ -20,7 +20,6 @@ import PostPaturm from "../../assets/Postpatum.svg";
 import Elderly from "../../assets/ElderlyCare.svg";
 import Recovery from "../../assets/RecoveryCare.svg";
 import Online from "../../assets/OnlineConsult.svg";
-import Doctor from "../../assets/Doctor.svg";
 import Costom from "../../assets/CustomIcon.svg";
 import NavBar from "../authLayouts/NavBar";
 import HelppIcon from "../../assets/HelppIcon.svg";
@@ -219,7 +218,7 @@ const ServicePage = () => {
             `}
               </style>
             </Box>
-            <MobileFooter/>
+            <MobileFooter />
           </VStack>
 
           <ElderlyCareModal

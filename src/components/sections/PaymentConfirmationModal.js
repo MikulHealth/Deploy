@@ -1,16 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { SetUser } from "../../redux/userSlice";
-import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import React, {  useState } from "react";
 import axios from "axios";
-import { GetCurrentUser } from "../../apiCalls/UserApis";
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import {
   Box,
   useToast,
-  extendTheme,
+  // extendTheme,
   Text,
-  Link as ChakraLink,
+  // Link as ChakraLink,
   useMediaQuery,
   FormControl,
   FormLabel,
@@ -23,25 +20,25 @@ import { PaystackButton } from "react-paystack";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/Whitelogo.png";
 
-const customTheme = extendTheme({
-  components: {
-    Link: {
-      baseStyle: {
-        _focus: {
-          boxShadow: "none",
-        },
-      },
-    },
-  },
-  fonts: {
-    body: "Gill Sans MT, sans-serif",
-    heading: "Gill Sans MT, sans-serif",
-  },
-});
+// const customTheme = extendTheme({
+//   components: {
+//     Link: {
+//       baseStyle: {
+//         _focus: {
+//           boxShadow: "none",
+//         },
+//       },
+//     },
+//   },
+//   fonts: {
+//     body: "Gill Sans MT, sans-serif",
+//     heading: "Gill Sans MT, sans-serif",
+//   },
+// });
 
 const PaymentConfirmationPage = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const toast = useToast();
   const { user } = useSelector((state) => state.userReducer);
   const location = useLocation();
@@ -67,16 +64,16 @@ const PaymentConfirmationPage = () => {
     });
   };
 
-  const formattedCost = (cost) => {
-    // Divide costOfService by 100 to represent the amount in naira
-    const costInNaira = cost / 100;
+  // const formattedCost = (cost) => {
+  //   // Divide costOfService by 100 to represent the amount in naira
+  //   const costInNaira = cost / 100;
 
-    // Format the costOfService as naira with the last two zeros separated by a dot
-    const formattedCost =
-      "₦ " + costInNaira.toLocaleString("en-NG", { maximumFractionDigits: 2 });
+  //   // Format the costOfService as naira with the last two zeros separated by a dot
+  //   const formattedCost =
+  //     "₦ " + costInNaira.toLocaleString("en-NG", { maximumFractionDigits: 2 });
 
-    return formattedCost;
-  };
+  //   return formattedCost;
+  // };
 
   const handlePaymentSuccess = (response) => {
     verifyPayment();

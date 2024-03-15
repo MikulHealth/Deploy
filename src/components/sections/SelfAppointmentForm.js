@@ -1,10 +1,9 @@
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import LoadingSpinner from "../../utils/Spiner";
 import LocationIcon from "../../assets/LocationIcon.svg";
 import CalenderIcon from "../../assets/CalenderIcon.svg";
 import {
@@ -19,28 +18,22 @@ import {
   FormLabel,
   Input,
   Button,
-  Progress,
   Image,
   Flex,
   Box,
   Select,
   useToast,
   InputGroup,
-  InputLeftElement,
-  InputRightElement,
   Textarea,
 } from "@chakra-ui/react";
-import { SetUser } from "../../redux/userSlice";
-
 const SelfAppointmentModal = ({ isOpen, onClose }) => {
   const toast = useToast();
-  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.userReducer);
   const [loading, setLoading] = useState(false);
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [customizedPlans, setCustomizedPlans] = useState([]);
-  const [selectedDob, setSelectedDob] = useState(null);
+  const [selectedDob] = useState(null);
   const [formFields, setFormFields] = useState({
     startDate: null,
     endDate: null,
@@ -48,7 +41,6 @@ const SelfAppointmentModal = ({ isOpen, onClose }) => {
     servicePlan: "",
     currentLocation: "",
     medicalReport: "",
-    costOfService: "",
     recipientHealthHistory: "",
     costOfService: "",
   });
@@ -221,26 +213,26 @@ const SelfAppointmentModal = ({ isOpen, onClose }) => {
     }
   };
 
-  const validateForm = () => {
-    if (
-      !formFields.startDate ||
-      !formFields.endDate ||
-      !formFields.shift ||
-      !formFields.servicePlan ||
-      !formFields.currentLocation ||
-      !formFields.medicSpecialization ||
-      !formFields.recipientHealthHistory
-    ) {
-      toast({
-        title: "Please fill all required fields",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-      return false;
-    }
-    return true;
-  };
+  // const validateForm = () => {
+  //   if (
+  //     !formFields.startDate ||
+  //     !formFields.endDate ||
+  //     !formFields.shift ||
+  //     !formFields.servicePlan ||
+  //     !formFields.currentLocation ||
+  //     !formFields.medicSpecialization ||
+  //     !formFields.recipientHealthHistory
+  //   ) {
+  //     toast({
+  //       title: "Please fill all required fields",
+  //       status: "error",
+  //       duration: 3000,
+  //       isClosable: true,
+  //     });
+  //     return false;
+  //   }
+  //   return true;
+  // };
 
   const calculateServiceCost = () => {
     const { servicePlan, shift } = formFields;
@@ -271,7 +263,7 @@ const SelfAppointmentModal = ({ isOpen, onClose }) => {
         if (customPlan) {
           // Adding two decimal places to costOfService for custom plans
           costOfService = parseInt(
-            customPlan.costOfService.replace(/[\.,]/g, "")
+            customPlan.costOfService.replace(/[,]/g, "")
           );
         } else {
           costOfService = 0;
@@ -284,7 +276,7 @@ const SelfAppointmentModal = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     calculateServiceCost();
-  }, [formFields.servicePlan, formFields.shift]);
+  });
 
   return (
     <Drawer

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import "react-datepicker/dist/react-datepicker.css";
 
 import BookAppointmentModal from "../sections/BookAppointment";
 import axios from "axios";
-import { CheckIcon, AddIcon, DeleteIcon, SearchIcon } from "@chakra-ui/icons";
+import { CheckIcon, AddIcon, DeleteIcon } from "@chakra-ui/icons";
 import {
   ChakraProvider,
   VStack,
@@ -28,11 +27,10 @@ import {
   extendTheme,
 } from "@chakra-ui/react";
 
-import UserDetailsModal from "../sections/UserDetails";
 import LoadingSpinner from "../../utils/Spiner";
 import HelppIcon from "../../assets/HelppIcon.svg";
 import CustomizeServiceModal from "../sections/CustomizeServiceModal";
-import SideBar from "../authLayouts/SideBar";
+
 import NavBar from "../authLayouts/NavBar";
 import LeftSideBar from "../authLayouts/LeftSideBar";
 import MobileFooter from "../authLayouts/MobileFooter";
@@ -121,14 +119,14 @@ const CustomizeServicePage = () => {
     }
   };
 
-  const formatDate = (dateString) => {
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    const formattedDate = new Date(dateString).toLocaleDateString(
-      undefined,
-      options
-    );
-    return formattedDate;
-  };
+  // const formatDate = (dateString) => {
+  //   const options = { year: "numeric", month: "long", day: "numeric" };
+  //   const formattedDate = new Date(dateString).toLocaleDateString(
+  //     undefined,
+  //     options
+  //   );
+  //   return formattedDate;
+  // };
 
   const handleDeleteService = (serviceId) => {
     setDeleteServiceId(serviceId);

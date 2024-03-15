@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import LeftSideBar from "../authLayouts/LeftSideBar";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../authLayouts/NavBar";
@@ -11,13 +11,10 @@ import {
   useToast,
   InputGroup,
   InputRightElement,
-  Image,
   Box,
   Text,
   IconButton,
   Flex,
-  Link,
-  Divider,
   FormControl,
   FormLabel,
   extendTheme,
@@ -306,7 +303,7 @@ const ChangePasswordPage = () => {
           w="100%"
           mt={{ base: "20px" }}
         >
-          <Flex justifyContent="space-between" >
+          <Flex justifyContent="space-between">
             <Box>
               <Text
                 textAlign="left"
@@ -326,7 +323,6 @@ const ChangePasswordPage = () => {
               fontSize={{ base: "12px" }}
               h="3vh"
               borderRadius="100px"
-             
             >
               Back
             </Button>
@@ -418,7 +414,7 @@ const ChangePasswordPage = () => {
             </VStack>
           </Box>
         </Flex>
-        <MobileFooter/>
+        <MobileFooter />
       </VStack>
     </ChakraProvider>
   );
