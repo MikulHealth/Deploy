@@ -143,18 +143,22 @@ export default function AppointmentTab() {
             fontSize={{ base: "10px", md: "16px" }}
             ml={{ base: "10px", md: "35px" }}
           >
-            No appointments yet. click{" "}
-            <a
+            No appointments yet. Click{" "}
+            <button
               style={{
                 color: "#A210C6",
                 fontStyle: "italic",
                 textDecoration: "none",
                 cursor: "pointer",
+                border: "none",
+                background: "none",
+                padding: "0",
+                font: "inherit",
               }}
               onClick={handleOpenAppointmentModal}
             >
               book appointment
-            </a>{" "}
+            </button>{" "}
             to begin.
           </Text>
         ) : (

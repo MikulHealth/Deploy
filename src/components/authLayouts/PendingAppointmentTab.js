@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LoadingSpinner from "../../utils/Spiner";
 // import { useSelector } from "react-redux";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import BookAppointmentModal from "../sections/BookAppointment";
 import { EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
@@ -257,18 +257,22 @@ export default function PendingApp() {
           fontSize={{ base: "10px", md: "16px" }}
           ml={{ base: "10px", md: "35px" }}
         >
-          No pending appointments yet. click{" "}
-          <a
+          No pending appointments yet. Click{" "}
+          <button
             style={{
               color: "#A210C6",
               fontStyle: "italic",
               textDecoration: "none",
               cursor: "pointer",
+              border: "none",
+              background: "none",
+              padding: "0",
+              font: "inherit",
             }}
             onClick={handleOpenAppointmentModal}
           >
             book appointment
-          </a>{" "}
+          </button>{" "}
           to begin.
         </Text>
       ) : (
