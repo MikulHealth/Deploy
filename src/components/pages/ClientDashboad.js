@@ -100,7 +100,7 @@ const ClientDash = () => {
     };
 
     fetchPendingData();
-  }, []);
+  });
 
   const checkUnpaidAppointments = (appointments) => {
     appointments.forEach((appointmentData) => {
@@ -202,7 +202,7 @@ const ClientDash = () => {
     };
 
     fetchData();
-  }, []);
+  });
 
   const handleOpenWalletModal = () => {
     navigate("/wallet");
